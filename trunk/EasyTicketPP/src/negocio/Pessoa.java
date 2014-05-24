@@ -86,6 +86,14 @@ public class Pessoa {
 				+ "]";
 	}
 	
+	public boolean isAtivo(Pessoa pessoa){
+		if(this.status.equals(EnumStatus.ATIVO)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	
     
     
