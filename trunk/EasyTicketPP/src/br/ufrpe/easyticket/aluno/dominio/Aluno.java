@@ -1,6 +1,8 @@
-package negocio;
+package br.ufrpe.easyticket.aluno.dominio;
 
 import java.sql.Date;
+
+import negocio.Pessoa;
 
 public class Aluno extends Pessoa{
 	
