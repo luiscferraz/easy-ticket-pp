@@ -5,7 +5,9 @@ import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
 
 public class Aluno {
-	
+	/**
+	 *A pessoa representa um aluno.
+	 */
 	private Pessoa pessoa;
 	private Curso curso;
 	

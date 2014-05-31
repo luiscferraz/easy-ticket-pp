@@ -14,7 +14,7 @@ public class Funcionario {
 	/**
 	 *A pessoa representa um funcionário.
 	 */
-	 
+	
 	private Cargo cargo;
 	private Pessoa pessoa;
 	

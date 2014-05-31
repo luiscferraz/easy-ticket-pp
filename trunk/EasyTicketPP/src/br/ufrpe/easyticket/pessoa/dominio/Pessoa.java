@@ -3,16 +3,22 @@ package negocio;
 import java.sql.Date;
 
 public class Pessoa {
+	
+	public enum Status{
+    	ATIVO,INATIVO
+    }
+	
 	private int id;
     private String nome;
     private String email;
     private String cpf;
     private String telefone;
-    private java.sql.Date dataNascimento;
-    private String status;
+    private java.sql.Date dataNascimento;    
+    private Status status;
     
 	public Pessoa(int id, String nome, String email, String cpf,
-			String telefone, Date dataNascimento, String status) {
+			String telefone, Date dataNascimento, Status status) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -70,11 +76,11 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
@@ -86,13 +92,11 @@ public class Pessoa {
 				+ "]";
 	}
 	
-	public boolean isAtivo(Pessoa pessoa){
-		if(this.status.equals(EnumStatus.ATIVO)){
-			return true;
-		}else{
-			return false;
-		}
-	}
+	
+    
+    
+    
+	
 	
 	
     
