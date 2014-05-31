@@ -1,4 +1,4 @@
-package negocio;
+package br.ufrpe.easyticket.cargo.dominio;
 
 public class Cargo {
 	private int idCargo;

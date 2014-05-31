@@ -1,23 +1,41 @@
-package negocio;
+package br.ufrpe.easyticket.funcionario.dominio;
 
 import java.sql.Date;
 
-public class Funcionario extends Pessoa {
-	 private int idCargo;
+import br.ufrpe.easyticket.cargo.dominio.Cargo;
+import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
-	public Funcionario(int id, String nome, String email, String cpf,
-			String telefone, Date dataNascimento, String status,int idCargo) {
-		super(id, nome, email, cpf, telefone, dataNascimento, status);
-		this.idCargo=idCargo;
+
+/**Esta classe representa um Funcionário
+ * @author 
+ *
+ */
+public class Funcionario {
+	/**
+	 *A pessoa representa um funcionário.
+	 */
+	 
+	private Cargo cargo;
+	private Pessoa pessoa;
+	
+	public Cargo getCargo() {
+		return cargo;
+	}
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
-	public int getIdCargo() {
-		return idCargo;
-	}
+	
 
-	public void setIdCargo(int idCargo) {
-		this.idCargo = idCargo;
-	}
+	
+	
+	
 	
 	
 	 
