@@ -1,26 +1,40 @@
 package br.ufrpe.easyticket.aluno.dominio;
 
-import java.sql.Date;
+import br.ufrpe.easyticket.curso.dominio.Curso;
+import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
-import negocio.Pessoa;
 
-public class Aluno extends Pessoa{
+public class Aluno {
 	
-	private int idCurso;
-
-	public Aluno(int id, String nome, String email, String cpf,
-			String telefone, Date dataNascimento, String status,int idCurso) {
-		super(id, nome, email, cpf, telefone, dataNascimento, status);
-		this.idCurso=idCurso;		
+	private Pessoa pessoa;
+	private Curso curso;
+	
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-
-	public int getIdCurso() {
-		return idCurso;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-
-	public void setIdCurso(int idCurso) {
-		this.idCurso = idCurso;
+	public Curso getCurso() {
+		return curso;
 	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+	
+	@Override
+	public String toString() {
+		return "Aluno [pessoa=" + pessoa + ", curso=" + curso + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+
+
 
 	
 	
