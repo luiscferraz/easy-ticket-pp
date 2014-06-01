@@ -6,27 +6,30 @@ import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
 public class AlunoDAO extends GenericDAO {
 
-	public void save(Aluno aluno) throws Exception{
-		String query = "INSERT INTO ALUNOS (id,nome) VALUES (?,?)";
-		
-		int nextId = this.getNextId("alunos");
-		
-		Pessoa pessoa = aluno.getPessoa();
-		pessoa.setId(nextId);
-		
-		this.executeQuery(query, aluno.getPessoa().getId(),aluno.getPessoa().getNome());
-		
+	@Override
+	protected String getSQLInserir(Object t) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append("INSERT INTO ALUNOS ");
+		return null;
 	}
+
+	@Override
+	protected String getSQLAlterar(Object t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getSQLRemover(Object t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
-	public void delete(Aluno aluno){
-		String query = "DELETE FROM ALUNOS WHERE id = ?";
-		try {
-			this.executeQuery(query, aluno.getPessoa().getId());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
+
+
 	
 	
 }
