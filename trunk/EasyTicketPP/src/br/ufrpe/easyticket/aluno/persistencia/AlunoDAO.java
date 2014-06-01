@@ -18,5 +18,15 @@ public class AlunoDAO extends GenericDAO {
 		
 	}
 	
+	public void delete(Aluno aluno){
+		String query = "DELETE FROM ALUNOS WHERE id = ?";
+		try {
+			this.executeQuery(query, aluno.getPessoa().getId());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 }
