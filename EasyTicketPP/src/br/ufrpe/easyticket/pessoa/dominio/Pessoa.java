@@ -2,13 +2,14 @@ package br.ufrpe.easyticket.pessoa.dominio;
 
 import java.sql.Date;
 
-public class Pessoa {
+import br.ufrpe.easyticket.infra.negocio.MyObject;
+
+public class Pessoa extends MyObject{
 	
 	public enum Status{
     	ATIVO,INATIVO
     }
-	
-	private int id;
+		
     private String nome;
     private String email;
     private String cpf;
@@ -16,10 +17,10 @@ public class Pessoa {
     private java.sql.Date dataNascimento;    
     private Status status;
     
-	public Pessoa(int id, String nome, String email, String cpf,
-			String telefone, Date dataNascimento, Status status) {
+	
+	public Pessoa(String nome, String email, String cpf, String telefone,
+			Date dataNascimento, Status status) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
@@ -28,14 +29,7 @@ public class Pessoa {
 		this.status = status;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -84,13 +78,15 @@ public class Pessoa {
 		this.status = status;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", email=" + email
-				+ ", cpf=" + cpf + ", telefone=" + telefone
-				+ ", dataNascimento=" + dataNascimento + ", status=" + status
-				+ "]";
+		return "Pessoa [nome=" + nome + ", email=" + email + ", cpf=" + cpf
+				+ ", telefone=" + telefone + ", dataNascimento="
+				+ dataNascimento + ", status=" + status + "]";
 	}
+
+	
 	
 	
     
