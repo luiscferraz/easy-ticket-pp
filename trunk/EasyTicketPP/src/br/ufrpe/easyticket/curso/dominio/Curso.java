@@ -1,22 +1,16 @@
 package br.ufrpe.easyticket.curso.dominio;
 
-public class Curso {
+import br.ufrpe.easyticket.infra.negocio.MyObject;
 
-	private int id;
+public class Curso extends MyObject{
+
+	
 	private String nome;
 	
-	public Curso(int id, String nome) {
+	
+	public Curso(String nome) {
 		super();
-		this.id = id;
 		this.nome = nome;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNome() {
@@ -29,7 +23,7 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", nome=" + nome + "]";
+		return "Curso [nome=" + nome + "]";
 	}
 	
 	

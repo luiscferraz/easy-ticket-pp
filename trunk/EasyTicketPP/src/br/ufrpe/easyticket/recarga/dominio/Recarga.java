@@ -1,20 +1,14 @@
 package br.ufrpe.easyticket.recarga.dominio;
 
 import br.ufrpe.easyticket.cartao.dominio.Cartao;
+import br.ufrpe.easyticket.infra.negocio.MyObject;
 
-public class Recarga {
-	
-	private int id;
+public class Recarga extends MyObject{
 	private float valor;
 	private java.sql.Date data;
 	private Cartao cartao;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public float getValor() {
 		return valor;
 	}

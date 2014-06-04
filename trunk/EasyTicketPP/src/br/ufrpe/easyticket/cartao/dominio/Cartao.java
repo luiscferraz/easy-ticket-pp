@@ -1,25 +1,20 @@
 package br.ufrpe.easyticket.cartao.dominio;
 
 import br.ufrpe.easyticket.aluno.dominio.Aluno;
+import br.ufrpe.easyticket.infra.negocio.MyObject;
 
-public class Cartao {
+public class Cartao extends MyObject{
 	
 	public enum StatusCartao{
 		ATIVO,INATIVO,BLOQUEADO
 	}
 	
-	private int id;
+	
 	private float saldo;
 	private StatusCartao status;
 	private Aluno aluno;
 	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+		
 	public float getSaldo() {
 		return saldo;
 	}
@@ -38,12 +33,13 @@ public class Cartao {
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
 	}
-	
 	@Override
 	public String toString() {
-		return "Cartao [id=" + id + ", saldo=" + saldo + ", status=" + status
-				+ ", aluno=" + aluno + "]";
+		return "Cartao [saldo=" + saldo + ", status=" + status + ", aluno="
+				+ aluno + "]";
 	}
+	
+	
 	
 	
 	

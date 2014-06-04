@@ -1,10 +1,12 @@
 package br.ufrpe.easyticket.aluno.persistencia;
 
-import br.ufrpe.easyticket.aluno.dominio.Aluno;
-import br.ufrpe.easyticket.infra.persistencia.GenericDAO;
-import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class AlunoDAO extends GenericDAO {
+import br.ufrpe.easyticket.infra.negocio.MyObject;
+import br.ufrpe.easyticket.infra.persistencia.GenericDAO;
+
+public class AlunoDAO extends GenericDAO  {
 
 	@Override
 	protected String getSQLInserir(Object t) {
@@ -22,6 +24,36 @@ public class AlunoDAO extends GenericDAO {
 
 	@Override
 	protected String getSQLRemover(Object t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean inserir(MyObject t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean alterar(MyObject t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean remover(MyObject t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected String getTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected Object convert(ResultSet rs) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}

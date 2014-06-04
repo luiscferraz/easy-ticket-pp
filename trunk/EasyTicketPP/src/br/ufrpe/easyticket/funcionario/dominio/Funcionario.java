@@ -1,8 +1,8 @@
 package br.ufrpe.easyticket.funcionario.dominio;
 
-import java.sql.Date;
 
 import br.ufrpe.easyticket.cargo.dominio.Cargo;
+import br.ufrpe.easyticket.infra.negocio.MyObject;
 import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
 
@@ -10,7 +10,7 @@ import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
  * @author 
  *
  */
-public class Funcionario {
+public class Funcionario  extends MyObject{
 	/**
 	 *A pessoa representa um funcionário.
 	 */

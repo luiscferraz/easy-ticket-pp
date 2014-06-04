@@ -3,10 +3,6 @@
  */
 package br.ufrpe.easyticket.infra.persistencia;
 
-import MPOOObject;
-import MPOORuntimeException;
-import Util;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import br.ufrpe.easyticket.infra.excessao.MyObjectRuntimeException;
+import br.ufrpe.easyticket.infra.excecao.MyObjectRuntimeException;
 import br.ufrpe.easyticket.infra.negocio.MyObject;
 
 
@@ -399,7 +395,7 @@ public abstract class GenericDAO<T> implements IGenericDAO{
 	 * @param id o id
 	 * @return a instância de <code>T</code>
 	 */
-	public T getById(int id) {
+	public MyObject getById(int id) {
 		Connection conn = this.abrirConexao();
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -410,7 +406,7 @@ public abstract class GenericDAO<T> implements IGenericDAO{
 			if (rs.next()) {
 				result = convertInternal(rs);
 			}
-			return result;
+			return (MyObject) result;
 		} catch (SQLException e) {
 			throw new MyObjectRuntimeException("Erro ao consultar os registros", e);
 		} finally {
@@ -603,6 +599,29 @@ public abstract class GenericDAO<T> implements IGenericDAO{
 		sb.append(o.getId());
 		sb.append(";");
 	}
+	
+	/* Método reponsável por converter o conteúdo do linha do ResultSet em um objeto do tipo <code>T</code>.
+	 * Este método utiliza o método {@link #convert(ResultSet)} que cria o objeto específico e depois seta 
+	 * as propriedades comuns, presentes em {@link MPOOObject}. 
+	 * @param rs o ResultSet
+	 * @return o objeto do tipo T
+	 * @throws SQLException 
+	 */
+	protected T convertInternal(ResultSet rs) throws SQLException {
+		T result = this.convert(rs);
+		preencherMyObjectProperties(rs, result);
+		return result;
+	}
+	 
+	 /**
+		 * Preenche as propriedades do {@link MPOOObject}
+		 * @param rs o result set
+		 * @param result o objeto
+		 * @throws SQLException
+		 */
+		protected void preencherMyObjectProperties(ResultSet rs, T result) throws SQLException {
+			((MyObject) result).setId(rs.getInt("ID"));
+		}
 
 	
  }

@@ -1,10 +1,11 @@
 package br.ufrpe.easyticket.aluno.dominio;
 
 import br.ufrpe.easyticket.curso.dominio.Curso;
+import br.ufrpe.easyticket.infra.negocio.MyObject;
 import br.ufrpe.easyticket.pessoa.dominio.Pessoa;
 
 
-public class Aluno {
+public class Aluno extends MyObject {
 	/**
 	 *A pessoa representa um aluno.
 	 */

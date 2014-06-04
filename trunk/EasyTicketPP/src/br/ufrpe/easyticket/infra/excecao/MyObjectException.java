@@ -1,4 +1,4 @@
-package br.ufrpe.easyticket.infra.excessao;
+package br.ufrpe.easyticket.infra.excecao;
 
 
 public class MyObjectException extends Exception{
